@@ -1,5 +1,15 @@
 # Session Summary
 
+**Timestamp:** December 2024, 12:25 PM EDT
+
+**What we did:** Created clean Python virtual environment, installed compatible coverage==6.5.0 and numba==0.58.1, successfully loaded WAS Node Suite (220 nodes).
+
+**Issues faced:** Package conflicts between numba/coverage versions causing AttributeError: module 'coverage' has no attribute 'types'.
+
+**Resolution:** Virtual environment with isolated dependencies resolved compatibility issues. ComfyUI running with all WAS nodes available.
+
+---
+
 **Timestamp:** October 10, 2025, 11:12 AM EDT
 
 **What we did:** Successfully installed ComfyUI with all required dependencies, PyTorch MPS support, and multiple custom node packs including WAS Node Suite (220 nodes), ComfyUI-GGUF, rgthree-comfy, UltimateSDUpscale, and others.
