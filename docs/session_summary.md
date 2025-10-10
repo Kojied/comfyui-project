@@ -37,3 +37,19 @@
 - Restarted ComfyUI to load the new extension
 
 **Current status:** All nodes are now available and working. ComfyUI is running successfully on port 8188 with all custom node packs loaded.
+
+---
+
+**Timestamp:** October 10, 2025, 1:10 PM EDT
+
+**What we did:** Successfully downloaded and configured FLUX.1-dev models (checkpoint, T5 text encoder, CLIP text encoder, VAE) totaling ~23GB. Created Hugging Face account and accepted FLUX license agreements. Set up ComfyUI to run SD1.5 workflow successfully.
+
+**Issues faced:** FLUX.1-dev models are gated and require Hugging Face authentication. Float8_e4m3fn data type incompatible with MPS backend on Apple Silicon. FLUX workflow extremely slow on CPU (0% progress for 5+ minutes). Matrix dimension mismatches in text encoder configuration.
+
+**Resolution:** 
+- Created Hugging Face account and accepted FLUX.1-dev license agreements
+- Downloaded all FLUX components via authenticated huggingface_hub
+- Switched to SD1.5 workflow which works perfectly with MPS backend
+- SD1.5 generation completes in ~44 seconds vs FLUX CPU taking 30+ minutes
+
+**Current status:** SD1.5 workflow working perfectly with MPS acceleration. FLUX models installed but require CPU mode due to Float8_e4m3fn incompatibility. ComfyUI running successfully on port 8188.
