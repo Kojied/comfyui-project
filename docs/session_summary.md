@@ -53,3 +53,19 @@
 - SD1.5 generation completes in ~44 seconds vs FLUX CPU taking 30+ minutes
 
 **Current status:** SD1.5 workflow working perfectly with MPS acceleration. FLUX models installed but require CPU mode due to Float8_e4m3fn incompatibility. ComfyUI running successfully on port 8188.
+
+---
+
+**Timestamp:** October 10, 2025, 3:00 PM EDT
+
+**What we did:** Converted SD1.5 text-to-image workflow to image-to-image workflow, attempted FLUX FP16 setup, and tested image transformation capabilities.
+
+**Issues faced:** FLUX FP16 complexity with separate UNet, CLIP-L, and T5 components requiring different loaders. ComfyUI-GGUF nodes needed for .gguf files but workflow setup is complex. FLUX T5 text encoder only available in FP8 format which is incompatible with MPS backend on Apple Silicon.
+
+**Resolution:** 
+- Created image-to-image workflow using SD1.5 checkpoint with LoadImage → VAEEncode → KSampler → VAEDecode → SaveImage
+- Set denoise strength to 0.75 for moderate image transformation
+- Installed gguf package for ComfyUI-GGUF compatibility
+- Downloaded FLUX FP16 checkpoint (22GB) but missing FP16 T5 text encoder
+
+**Current status:** SD1.5 image-to-image workflow functional but quality is insufficient for desired results. FLUX FP16 setup incomplete due to missing FP16 T5 text encoder. ComfyUI running successfully on port 8188 with MPS acceleration.
