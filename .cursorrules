@@ -1,0 +1,44 @@
+# ComfyUI Terminal Analysis Rules
+
+## CRITICAL: Terminal Output Analysis Process
+
+When analyzing ComfyUI terminal output, ALWAYS follow this process:
+
+### 1. Wait for Clear Indicators
+- ✅ **"Starting server"** = ComfyUI is ready
+- ✅ **"To see the GUI go to: [URL]"** = Server is running
+- ❌ **No "Starting server" message** = Still loading
+
+### 2. Focus on Most Recent Output
+- Look at the **bottom/latest lines** of terminal output
+- Ignore old startup logs from previous sessions
+- Check timestamps to distinguish old vs new instances
+
+### 3. Verify Before Claiming
+- Don't say "ComfyUI is ready" until I see "Starting server"
+- Don't provide URLs until I see "To see the GUI go to:"
+- Wait for the process to actually complete
+
+### 4. Common Mistakes to Avoid
+- ❌ Mixing up old terminal output with new startup process
+- ❌ Claiming ComfyUI is ready when it's still loading
+- ❌ Providing URLs before seeing "Starting server"
+- ❌ Focusing on middle sections of terminal output instead of latest
+
+### 5. Apply This Everywhere
+- ✅ **This session** - Following the process
+- ✅ **Future sessions** - Will use the same approach
+- ✅ **Any ComfyUI startup** - Will wait for proper indicators
+- ✅ **Any server startup** - Will verify before claiming ready
+
+## Example of Correct Analysis:
+```
+Lines 139-140: "Starting server" + "To see the GUI go to: http://127.0.0.1:8189"
+✅ ComfyUI is ready at http://127.0.0.1:8189
+```
+
+## Example of Incorrect Analysis:
+```
+Lines 65-163: Still loading custom nodes, fetching data
+❌ ComfyUI is NOT ready yet - wait for "Starting server"
+```
