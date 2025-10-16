@@ -69,3 +69,17 @@
 - Downloaded FLUX FP16 checkpoint (22GB) but missing FP16 T5 text encoder
 
 **Current status:** SD1.5 image-to-image workflow functional but quality is insufficient for desired results. FLUX FP16 setup incomplete due to missing FP16 T5 text encoder. ComfyUI running successfully on port 8188 with MPS acceleration.
+
+---
+
+**Timestamp:** October 16, 2025, 2:30 PM EDT
+
+**Goal:** Generate a gorilla playing squash image using FLUX LoRA workflow on Google Colab with GPU acceleration, controlled via CLI without user intervention.
+
+**Problem:** Local ComfyUI lacks GPU power for FLUX generation. Need automated Colab setup with ComfyUI GUI access via tunneling.
+
+**Issues faced:** Service account storage quota limits, ngrok authentication failures, repeated notebook uploads for fixes.
+
+**Resolution:** Created automated Colab notebook upload system with Google API credentials, fixed ngrok auth issues by switching to localtunnel, created working notebook `comfyui_fixed_final.ipynb`.
+
+**Current status:** Working notebook created with localtunnel tunneling (no auth required). Ready for Colab upload and ComfyUI GUI access.
